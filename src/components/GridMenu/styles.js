@@ -5,7 +5,9 @@ import { colors } from '@styles/';
 
 export const Container = styled.TouchableOpacity.attrs({
   hitSlop: { top: 10, bottom: 10, left: 10, right: 10 },
-})``;
+})`
+  width: 40px;
+`;
 
 export const ActiveIcon = styled(Ionicons).attrs({
   size: 40,
