@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const api = axios.create({
-  baseURL: 'https://localhost:3000',
+  baseURL: 'https://trace.moe/api',
 });
 
 export default api;
