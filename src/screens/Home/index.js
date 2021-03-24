@@ -88,7 +88,7 @@ function HomeScreen() {
         <ActivityIndicator animating={image && !anime} />
         <SearchButton onPress={() => pickImage(setImage)} />
         <Modal ref={modalRef}>
-          <AnimeCard data={anime} />
+          <AnimeCard anime={anime} />
         </Modal>
       </Container>
     </Wrapper>
