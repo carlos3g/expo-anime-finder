@@ -27,7 +27,7 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#FFFFFF"
       },
-      "permissions": []
+      "permissions": ["CAMERA"]
     },
     "androidNavigationBar": {
       "visible": "sticky-immersive",
