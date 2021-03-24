@@ -48,7 +48,7 @@ function searchAnime(image) {
       const { data } = await axios.post('/search', formData);
       const imageResult = {
         name: data.docs[0].title_romaji,
-        imageUri: image.uri,
+        imgUrl: image.uri,
         id: data.docs[0].tokenthumb,
       };
       return resolve(imageResult);
@@ -88,12 +88,7 @@ function HomeScreen() {
         <ActivityIndicator animating={image && !anime} />
         <SearchButton onPress={() => pickImage(setImage)} />
         <Modal ref={modalRef}>
-          <AnimeCard
-            data={{
-              name: anime && anime.name,
-              imgUrl: anime && anime.imageUri,
-            }}
-          />
+          <AnimeCard data={anime} />
         </Modal>
       </Container>
     </Wrapper>
