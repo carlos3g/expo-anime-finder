@@ -10,17 +10,17 @@ import {
   Icon,
 } from './styles';
 
-function AnimeCard({ data }) {
+function AnimeCard({ anime }) {
   return (
     <Container>
       <Image
         source={{
-          uri: data.imgUrl,
+          uri: anime.imgUrl,
         }}
       />
       <Divider />
       <Footer>
-        <Title>{data.name}</Title>
+        <Title>{anime.name}</Title>
         <IconWrapper>
           <Icon />
         </IconWrapper>
