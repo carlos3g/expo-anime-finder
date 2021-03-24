@@ -46,8 +46,14 @@ function searchAnime(image) {
 
     try {
       const { data } = await axios.post('/search', formData);
-      return resolve({ name: data.docs[0].title_romaji, imageUri: image.uri });
+      const imageResult = {
+        name: data.docs[0].title_romaji,
+        imageUri: image.uri,
+        id: data.docs[0].tokenthumb,
+      };
+      return resolve(imageResult);
     } catch (error) {
+      console.log(error);
       return reject(error);
     }
   });
