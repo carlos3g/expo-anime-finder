@@ -49,7 +49,6 @@ export const IconWrapper = styled.TouchableOpacity.attrs({
 })``;
 
 export const Icon = styled(Ionicons).attrs({
-  name: 'heart-outline',
   color: colors.white,
   size: 30,
 })``;
