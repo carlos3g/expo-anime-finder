@@ -43,6 +43,8 @@ export const Footer = styled.View`
 export const Title = styled.Text`
   color: ${colors.white};
   font-size: 18px;
+  include-font-padding: false;
+  text-align-vertical: center;
 `;
 
 export const IconWrapper = styled.TouchableOpacity.attrs({
