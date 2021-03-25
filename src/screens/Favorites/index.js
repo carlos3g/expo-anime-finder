@@ -13,11 +13,11 @@ function FavoritesScreen() {
 
   useFocusEffect(
     useCallback(() => {
-      async function getAnimes() {
+      (async () => {
         const result = await getData('@saveAnimes');
         setAnimes(result);
-      }
-      getAnimes();
+      })();
+      return () => setAnimes([]);
     }, [])
   );
 
