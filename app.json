@@ -1,42 +1,39 @@
 {
   "expo": {
     "name": "Anime Finder",
-    "description": "",
+    "description": "This app helps you find anime through images",
     "slug": "expo-anime-finder",
     "version": "1.0.0",
     "githubUrl": "https://github.com/carlos3g/expo-anime-finder",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
+    "primaryColor": "#1E1E2C",
+    "userInterfaceStyle": "dark",
 
+    "assetBundlePatterns": ["**/*"],
+    "updates": {
+      "enabled": false
+    },
     "splash": {
       "image": "./assets/splash.png",
       "resizeMode": "contain",
       "backgroundColor": "#1E1E2C"
     },
-    "updates": {
-      "fallbackToCacheTimeout": 0
+    "androidNavigationBar": {
+      "visible": "sticky-immersive",
+      "barStyle": "light-content",
+      "backgroundColor": "#1E1E2C"
     },
-    "assetBundlePatterns": ["**/*"],
-
-    "ios": {
-      "supportsTablet": true
+    "androidStatusBar": {
+      "barStyle": "light-content"
     },
-
     "android": {
+      "enableDangerousExperimentalLeanBuilds": true,
+      "permissions": ["CAMERA"],
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#1E1E2C"
-      },
-      "permissions": ["CAMERA"]
-    },
-    "androidNavigationBar": {
-      "visible": "sticky-immersive",
-      "barStyle": "dark-content",
-      "backgroundColor": "#1E1E2C"
-    },
-
-    "web": {
-      "favicon": "./assets/favicon.png"
+      }
     }
   }
 }
