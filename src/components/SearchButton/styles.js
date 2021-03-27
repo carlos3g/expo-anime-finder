@@ -4,7 +4,9 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 import { colors } from '@styles/';
 
-export const Wrapper = styled.TouchableOpacity`
+export const Wrapper = styled.TouchableOpacity.attrs({
+  activeOpacity: 0.7,
+})`
   width: 100%;
   height: 65px;
 
