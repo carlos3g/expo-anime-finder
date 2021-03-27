@@ -11,7 +11,7 @@ function GridMenu({ focus, onPress }) {
   useEffect(() => {
     Animated.sequence([
       Animated.timing(fadeAnim, {
-        toValue: 0.2,
+        toValue: 0.7,
         duration: 50,
         useNativeDriver: true,
       }),
