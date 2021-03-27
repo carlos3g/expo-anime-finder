@@ -25,7 +25,8 @@
       "backgroundColor": "#1E1E2C"
     },
     "androidStatusBar": {
-      "barStyle": "light-content"
+      "barStyle": "light-content",
+      "translucent": true
     },
     "android": {
       "enableDangerousExperimentalLeanBuilds": true,

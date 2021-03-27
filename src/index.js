@@ -1,6 +1,5 @@
 import React from 'react';
 
-import { StatusBar } from 'expo-status-bar';
 import AppLoading from 'expo-app-loading';
 import { useFonts, Montserrat_400Regular } from '@expo-google-fonts/montserrat';
 
@@ -13,12 +12,7 @@ function App() {
     return <AppLoading />;
   }
 
-  return (
-    <>
-      <StatusBar translucent />
-      <Routes />
-    </>
-  );
+  return <Routes />;
 }
 
 export default App;
