@@ -23,7 +23,7 @@ async function requestCameraPermission() {
 
 async function pickImage(setter) {
   const result = await ImagePicker.launchImageLibraryAsync({
-    mediaTypes: ImagePicker.MediaTypeOptions.All,
+    mediaTypes: ImagePicker.MediaTypeOptions.Images,
     allowsEditing: true,
     quality: 1,
   });
