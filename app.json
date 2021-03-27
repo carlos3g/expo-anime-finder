@@ -30,7 +30,7 @@
     },
     "android": {
       "enableDangerousExperimentalLeanBuilds": true,
-      "permissions": ["CAMERA"],
+      "permissions": ["CAMERA", "MEDIA_LIBRARY"],
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#1E1E2C"
