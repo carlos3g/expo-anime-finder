@@ -1,7 +1,6 @@
 import React, { useRef, useState, useEffect } from 'react';
 
 /**
- * TODO: Change activity indicator condition
  * TODO: Change alert on status not granted
  * TODO: Lets code more clean
  */
@@ -75,6 +74,7 @@ function HomeScreen() {
       if (image) {
         const result = await searchAnime(image);
         setAnime(result);
+        setImage(null);
         modalRef.current.open();
       }
     })();
@@ -84,7 +84,7 @@ function HomeScreen() {
     <Wrapper>
       <Container>
         <GridMenu focus={useIsDrawerOpen()} onPress={toggleDrawer} />
-        <ActivityIndicator animating={image && !anime} />
+        <ActivityIndicator animating={Boolean(image)} />
         <SearchButton onPress={() => pickImage(setImage)} />
         <Modal ref={modalRef}>
           <AnimeCard anime={anime} />
