@@ -66,19 +66,18 @@ function HomeScreen() {
   const modalRef = useRef(null);
 
   useEffect(() => {
-    requestCameraPermission;
+    requestCameraPermission();
   }, []);
 
   // search for the image, set the api response to anime and open modal every time a image is picked
   useEffect(() => {
-    async function fetchData() {
+    (async () => {
       if (image) {
         const result = await searchAnime(image);
         setAnime(result);
         modalRef.current.open();
       }
-    }
-    fetchData();
+    })();
   }, [image]);
 
   return (
