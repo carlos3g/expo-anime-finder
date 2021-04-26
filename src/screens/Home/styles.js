@@ -9,7 +9,7 @@ import { colors } from '@styles/';
 export const Wrapper = styled.ImageBackground.attrs({
   source: backgroundIMG,
   resizeMode: 'cover',
-  blurRadius: 3,
+  blurRadius: 1,
 })`
   flex: 1;
 `;
