@@ -10,7 +10,15 @@ import * as ImagePicker from 'expo-image-picker';
 import axios from '@services/api';
 
 import { GridMenu, SearchButton, AnimeCard, Toast } from '@components/';
-import { Container, Wrapper, Modal, ActivityIndicator } from './styles';
+import {
+  Container,
+  Wrapper,
+  Modal,
+  ActivityIndicator,
+  Title,
+  Description,
+  Content,
+} from './styles';
 
 function HomeScreen() {
   const { toggleDrawer } = useNavigation();
@@ -86,6 +94,16 @@ function HomeScreen() {
     <Wrapper>
       <Container>
         <GridMenu focus={useIsDrawerOpen()} onPress={toggleDrawer} />
+
+        <Content>
+          <Title>Busque por animes</Title>
+          <Description>
+            Por meio de imagens, descubra o nome de animes usando o Anime
+            finder. É recomendado usar mais de uma imagem durante a procura de
+            um anime
+          </Description>
+        </Content>
+
         <SearchButton onPress={() => pickImage(setImage)} />
 
         <Toast ref={toastRef} timeout={3200} />

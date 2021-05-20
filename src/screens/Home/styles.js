@@ -38,3 +38,24 @@ export const Modal = styled(Modalize).attrs({
   handleStyle: { backgroundColor: '#c4c4c4', width: '20%' },
   modalStyle: { backgroundColor: colors.blackBlueBerryShade },
 })``;
+
+export const Content = styled.View`
+  justify-content: flex-end;
+  padding-bottom: 70px;
+  flex: 1;
+`;
+
+export const Title = styled.Text`
+  font-family: Lato_400Regular;
+  color: ${colors.white};
+  font-size: 30px;
+`;
+
+export const Description = styled.Text`
+  font-family: Lato_400Regular;
+  line-height: 24px;
+  color: ${colors.white};
+  font-size: 16px;
+
+  margin-top: 10px;
+`;
