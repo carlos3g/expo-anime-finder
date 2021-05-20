@@ -24,7 +24,11 @@ export const Container = styled(SafeAreaView)`
 export const ActivityIndicator = styled.ActivityIndicator.attrs({
   color: colors.turquoise,
   size: 50,
-})``;
+})`
+  position: absolute;
+  left: 50%;
+  top: 50%;
+`;
 
 export const Modal = styled(Modalize).attrs({
   snapPoint: 350,

@@ -86,12 +86,13 @@ function HomeScreen() {
     <Wrapper>
       <Container>
         <GridMenu focus={useIsDrawerOpen()} onPress={toggleDrawer} />
-        <ActivityIndicator animating={Boolean(image)} />
         <SearchButton onPress={() => pickImage(setImage)} />
+
+        <Toast ref={toastRef} timeout={3200} />
+        <ActivityIndicator animating={Boolean(image)} />
         <Modal ref={modalRef}>
           <AnimeCard anime={anime} />
         </Modal>
-        <Toast ref={toastRef} timeout={3200} />
       </Container>
     </Wrapper>
   );
