@@ -28,10 +28,9 @@ Anime finder aims to find animes through image searches
 
 ### 📷 Screenshots
 
-<!--
-<img src="" alt="" width="300" />
-<img src="" alt="" width="300" />
--->
+<div align="center">
+  <img src=".github/images/screenshots.png" alt="Screenshot" width="90%"/>
+</div>
 
 ### 🛠 Technologies
 
