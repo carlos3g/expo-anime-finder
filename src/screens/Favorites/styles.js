@@ -6,20 +6,18 @@ import backgroundIMG from '@assets/images/background.png';
 export const Wrapper = styled.ImageBackground.attrs({
   source: backgroundIMG,
   resizeMode: 'cover',
-  blurRadius: 3,
+  blurRadius: 1,
 })`
   flex: 1;
 `;
 
 export const Container = styled(SafeAreaView)`
   flex: 1;
-  align-items: center;
-  justify-content: center;
-  padding: 0 16px;
+  padding: 16px 16px 0 16px;
 `;
 
-export const Title = styled.Text`
-  color: #c8c7dd;
-  font-size: 18px;
-  text-align: center;
+export const CardsContainer = styled.ScrollView.attrs({
+  showsVerticalScrollIndicator: false,
+})`
+  margin-top: 50px;
 `;

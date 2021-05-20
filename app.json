@@ -1,42 +1,40 @@
 {
   "expo": {
     "name": "Anime Finder",
-    "description": "",
+    "description": "Find a anime by a image",
     "slug": "expo-anime-finder",
     "version": "1.0.0",
     "githubUrl": "https://github.com/carlos3g/expo-anime-finder",
     "orientation": "portrait",
+    "backgroundColor": "#1E1E2C",
+    "primaryColor": "#33E1ED",
     "icon": "./assets/icon.png",
-
-    "splash": {
-      "image": "./assets/splash.png",
-      "resizeMode": "contain",
-      "backgroundColor": "#ffffff"
-    },
-    "updates": {
-      "fallbackToCacheTimeout": 0
-    },
-    "assetBundlePatterns": ["**/*"],
-
-    "ios": {
-      "supportsTablet": true
-    },
-
-    "android": {
-      "adaptiveIcon": {
-        "foregroundImage": "./assets/adaptive-icon.png",
-        "backgroundColor": "#FFFFFF"
-      },
-      "permissions": []
+    "userInterfaceStyle": "dark",
+    "androidStatusBar": {
+      "barStyle": "light-content",
+      "translucent": true
     },
     "androidNavigationBar": {
       "visible": "sticky-immersive",
-      "barStyle": "dark-content",
-      "backgroundColor": "#ffffff"
+      "barStyle": "light-content",
+      "backgroundColor": "#1E1E2C"
     },
-
-    "web": {
-      "favicon": "./assets/favicon.png"
+    "updates": {
+      "enabled": false
+    },
+    "assetBundlePatterns": ["**/*"],
+    "splash": {
+      "image": "./assets/splash.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#1E1E2C"
+    },
+    "android": {
+      "enableDangerousExperimentalLeanBuilds": true,
+      "permissions": ["CAMERA", "MEDIA_LIBRARY"],
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#1E1E2C"
+      }
     }
   }
 }
