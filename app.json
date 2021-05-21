@@ -29,12 +29,14 @@
       "backgroundColor": "#1E1E2C"
     },
     "android": {
-      "enableDangerousExperimentalLeanBuilds": true,
-      "permissions": ["CAMERA", "MEDIA_LIBRARY"],
       "adaptiveIcon": {
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#1E1E2C"
-      }
+      },
+      "enableDangerousExperimentalLeanBuilds": true,
+      "permissions": ["CAMERA", "MEDIA_LIBRARY"],
+      "package": "com.carlos3g.animefinder",
+      "versionCode": 1
     }
   }
 }
