@@ -1,27 +1,26 @@
-import React, { useRef, useState, useEffect } from 'react';
-
 /**
  * TODO: Lets code more clean
  */
 
+import { AnimeCard, GridMenu, SearchButton, Toast } from '@components/';
+import { useDrawerStatus } from '@react-navigation/drawer';
 import { useNavigation } from '@react-navigation/native';
-import { useIsDrawerOpen } from '@react-navigation/drawer';
-import * as ImagePicker from 'expo-image-picker';
 import axios from '@services/api';
-
-import { GridMenu, SearchButton, AnimeCard, Toast } from '@components/';
+import * as ImagePicker from 'expo-image-picker';
+import { useEffect, useRef, useState } from 'react';
 import {
-  Container,
-  Wrapper,
-  Modal,
   ActivityIndicator,
-  Title,
-  Description,
+  Container,
   Content,
+  Description,
+  Modal,
+  Title,
+  Wrapper,
 } from './styles';
 
 function HomeScreen() {
   const { toggleDrawer } = useNavigation();
+  const isDrawerOpen = useDrawerStatus() === 'open';
   const [image, setImage] = useState(null);
   const [anime, setAnime] = useState(null);
   const modalRef = useRef(null);
@@ -93,7 +92,7 @@ function HomeScreen() {
   return (
     <Wrapper>
       <Container>
-        <GridMenu focus={useIsDrawerOpen()} onPress={toggleDrawer} />
+        <GridMenu focus={isDrawerOpen} onPress={toggleDrawer} />
 
         <Content>
           <Title>Busque por animes</Title>

@@ -1,14 +1,13 @@
-import React, { useState, useCallback } from 'react';
-
-import { useNavigation, useFocusEffect } from '@react-navigation/native';
-import { useIsDrawerOpen } from '@react-navigation/drawer';
-
-import { GridMenu, AnimeCard } from '@components/';
-import { CardsContainer, Container, Wrapper } from './styles';
+import { AnimeCard, GridMenu } from '@components/';
+import { useDrawerStatus } from '@react-navigation/drawer';
+import { useFocusEffect, useNavigation } from '@react-navigation/native';
+import { useCallback, useState } from 'react';
 import { getData } from '~/utils';
+import { CardsContainer, Container, Wrapper } from './styles';
 
 function FavoritesScreen() {
   const { toggleDrawer } = useNavigation();
+  const isDrawerOpen = useDrawerStatus() === 'open';
   const [animes, setAnimes] = useState([]);
 
   useFocusEffect(
@@ -24,7 +23,7 @@ function FavoritesScreen() {
   return (
     <Wrapper>
       <Container>
-        <GridMenu focus={useIsDrawerOpen()} onPress={toggleDrawer} />
+        <GridMenu focus={isDrawerOpen} onPress={toggleDrawer} />
         <CardsContainer>
           {animes.map((anime, index) => (
             <AnimeCard anime={anime} key={index} />

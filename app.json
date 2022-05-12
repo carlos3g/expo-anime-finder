@@ -33,7 +33,6 @@
         "foregroundImage": "./assets/adaptive-icon.png",
         "backgroundColor": "#1E1E2C"
       },
-      "enableDangerousExperimentalLeanBuilds": false,
       "permissions": ["CAMERA", "MEDIA_LIBRARY"],
       "package": "com.carlos3g.animefinder",
       "versionCode": 1

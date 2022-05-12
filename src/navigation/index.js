@@ -1,15 +1,10 @@
-import React from 'react';
-
+import { NavigationContainer } from '@react-navigation/native';
 import DrawerNavigator from './DrawerNavigator';
 
-import { NavigationContainer } from '@react-navigation/native';
-
-function Routes() {
-  return (
-    <NavigationContainer>
-      <DrawerNavigator />
-    </NavigationContainer>
-  );
-}
+const Routes = () => (
+  <NavigationContainer>
+    <DrawerNavigator />
+  </NavigationContainer>
+);
 
 export { Routes };

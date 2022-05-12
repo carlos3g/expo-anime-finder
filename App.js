@@ -1,10 +1,11 @@
-import 'react-native-gesture-handler';
 import React from 'react';
-
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
 import App from './src';
 
-function Main() {
-  return <App />;
-}
+const Main = () => (
+  <GestureHandlerRootView style={{ flex: 1 }}>
+    <App />
+  </GestureHandlerRootView>
+);
 
 export default Main;

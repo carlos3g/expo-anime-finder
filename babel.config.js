@@ -30,6 +30,9 @@ module.exports = function (api) {
   api.cache(true);
   return {
     presets: ['babel-preset-expo'],
-    plugins: [['babel-plugin-root-import', importOptions]],
+    plugins: [
+      ['babel-plugin-root-import', importOptions],
+      'react-native-reanimated/plugin',
+    ],
   };
 };
