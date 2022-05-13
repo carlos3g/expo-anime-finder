@@ -26,14 +26,7 @@ function HomeScreen() {
   const modalRef = useRef(null);
   const toastRef = useRef(null);
 
-  async function requestCameraPermission() {
-    const { status } = await ImagePicker.requestMediaLibraryPermissionsAsync();
-    if (status !== 'granted') {
-      toastRef.current.show('Sorry, we need media permission to work!');
-    }
-  }
-
-  async function pickImage() {
+  const pickImage = async () => {
     const result = await ImagePicker.launchImageLibraryAsync({
       mediaTypes: ImagePicker.MediaTypeOptions.Images,
       allowsEditing: true,
@@ -44,12 +37,11 @@ function HomeScreen() {
       const name = result.uri.split('/').pop(); // "file:/[...]/images/image.png" => "image.png"
       setImage({ ...result, name });
     }
-  }
+  };
 
-  function searchAnime() {
-    return new Promise(async (resolve, reject) => {
+  const searchAnime = () =>
+    new Promise(async (resolve, reject) => {
       const formData = new FormData();
-
       formData.append('image', {
         uri: image.uri,
         name: image.name,
@@ -57,23 +49,33 @@ function HomeScreen() {
       });
 
       try {
-        const { data } = await axios.post('/search', formData);
-        const imageResult = {
-          name: data.docs[0].title_romaji,
+        const { data } = await axios.post('/search?anilistInfo', formData);
+        const { result } = data;
+        const searchResult = {
+          name: result[0].anilist.romaji,
           imgUrl: image.uri,
-          id: data.docs[0].tokenthumb,
+          id: result[0].anilist.id,
         };
-        return resolve(imageResult);
-      } catch (error) {
+
+        return resolve(searchResult);
+      } catch (e) {
         toastRef.current.show(
           'We had a problem looking for this image. Try again or use another image!'
         );
-        return reject(error);
+
+        return reject(e);
       }
     });
-  }
 
   useEffect(() => {
+    async function requestCameraPermission() {
+      const { status } =
+        await ImagePicker.requestMediaLibraryPermissionsAsync();
+      if (status !== 'granted') {
+        toastRef.current.show('Sorry, we need media permission to work!');
+      }
+    }
+
     requestCameraPermission();
   }, []);
 
