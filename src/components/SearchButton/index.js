@@ -1,15 +1,11 @@
-import React from 'react';
+import { Container, Label, Wrapper } from './styles';
 
-import { Container, Wrapper, Label } from './styles';
-
-function SearchButton({ onPress }) {
-  return (
-    <Wrapper onPress={onPress}>
-      <Container>
-        <Label>Select Photo</Label>
-      </Container>
-    </Wrapper>
-  );
-}
+const SearchButton = ({ onPress }) => (
+  <Wrapper onPress={onPress}>
+    <Container>
+      <Label>Select Photo</Label>
+    </Container>
+  </Wrapper>
+);
 
 export default SearchButton;

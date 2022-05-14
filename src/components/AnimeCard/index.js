@@ -1,44 +1,37 @@
-import React, { useState, useEffect } from 'react';
-
 /**
  * TODO: show a toast onError
  */
 
+import { useEffect, useState } from 'react';
+import { useIsAnimeSaved } from '@hooks/';
+import { storeData } from '~/utils';
 import {
   Container,
-  Image,
   Divider,
   Footer,
-  Title,
-  IconWrapper,
   Icon,
+  IconWrapper,
+  Image,
+  Title,
 } from './styles';
-import { getData, storeData } from '~/utils';
 
-async function useIsAnimeSaved(anime) {
-  const savedAnimes = await getData('@saveAnimes');
-  const animeIndex = savedAnimes.findIndex((e) => e.id === anime.id);
-
-  return [animeIndex != -1, animeIndex, savedAnimes];
-}
-
-function AnimeCard({ anime }) {
+const AnimeCard = ({ animeData }) => {
   const [iconName, setIconName] = useState('heart-outline');
 
   useEffect(() => {
     (async () => {
-      const [isAnimeSaved] = await useIsAnimeSaved(anime);
+      const [isAnimeSaved] = await useIsAnimeSaved(animeData);
       setIconName(isAnimeSaved ? 'heart' : 'heart-outline');
     })();
   }, []);
 
-  async function handleSaveAnime() {
+  const handleSaveAnime = async () => {
     const [isAnimeSaved, animeIndex, savedAnimes] = await useIsAnimeSaved(
-      anime
+      animeData
     );
 
     if (!isAnimeSaved) {
-      savedAnimes.unshift(anime);
+      savedAnimes.unshift(animeData);
       setIconName('heart');
     } else {
       savedAnimes.splice(animeIndex, 1);
@@ -46,24 +39,26 @@ function AnimeCard({ anime }) {
     }
 
     await storeData('@saveAnimes', savedAnimes);
-  }
+  };
 
   return (
     <Container>
       <Image
         source={{
-          uri: anime.imgUrl,
+          uri: animeData.imgUrl,
         }}
       />
+
       <Divider />
+
       <Footer>
-        <Title>{anime.name}</Title>
+        <Title>{animeData.name}</Title>
         <IconWrapper onPress={handleSaveAnime}>
           <Icon name={iconName} />
         </IconWrapper>
       </Footer>
     </Container>
   );
-}
+};
 
 export default AnimeCard;

@@ -110,7 +110,7 @@ function HomeScreen() {
         <Toast ref={toastRef} timeout={3200} />
         <ActivityIndicator animating={Boolean(image)} />
         <Modal ref={modalRef}>
-          <AnimeCard anime={anime} />
+          <AnimeCard animeData={anime} />
         </Modal>
       </Container>
     </Wrapper>

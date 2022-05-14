@@ -26,7 +26,7 @@ function FavoritesScreen() {
         <GridMenu focus={isDrawerOpen} onPress={toggleDrawer} />
         <CardsContainer>
           {animes.map((anime, index) => (
-            <AnimeCard anime={anime} key={index} />
+            <AnimeCard animeData={anime} key={index} />
           ))}
         </CardsContainer>
       </Container>

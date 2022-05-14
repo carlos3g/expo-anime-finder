@@ -1,10 +1,14 @@
 import React, { useState } from 'react';
-
 import { Container, Label } from './styles';
 
 function Toast({ timeout }, ref) {
   const [isVisible, setIsVisible] = useState(false);
   const [message, setMessage] = useState(null);
+
+  React.useImperativeHandle(ref, () => ({
+    show,
+    hide,
+  }));
 
   const hide = () => {
     setTimeout(() => {
@@ -17,11 +21,6 @@ function Toast({ timeout }, ref) {
     setMessage(message);
     hide();
   };
-
-  React.useImperativeHandle(ref, () => ({
-    show,
-    hide,
-  }));
 
   if (!isVisible) {
     return null;

@@ -1,18 +1,14 @@
-import styled from 'styled-components/native';
-
 import { Ionicons } from '@expo/vector-icons';
-import { StyleSheet } from 'react-native';
-
 import { colors } from '@styles/';
+import { StyleSheet } from 'react-native';
+import styled from 'styled-components/native';
 
 export const Container = styled.View`
   background-color: ${colors.blackPearl};
   width: 100%;
   margin: 10px 0;
-
   border: ${StyleSheet.hairlineWidth}px solid #2e2e43;
   border-radius: 12px;
-
   elevation: 4;
   overflow: hidden;
 `;

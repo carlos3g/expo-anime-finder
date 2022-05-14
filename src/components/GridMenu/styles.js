@@ -1,8 +1,7 @@
-import styled from 'styled-components/native';
-
-import { Animated, TouchableHighlight } from 'react-native';
 import { Ionicons } from '@expo/vector-icons';
 import { colors } from '@styles/';
+import { Animated, TouchableHighlight } from 'react-native';
+import styled from 'styled-components/native';
 
 const AnimatedTouchable = Animated.createAnimatedComponent(TouchableHighlight);
 

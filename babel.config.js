@@ -12,6 +12,10 @@ const importOptions = {
       rootPathPrefix: '@components/',
     },
     {
+      rootPathSuffix: './src/hooks',
+      rootPathPrefix: '@hooks/',
+    },
+    {
       rootPathSuffix: './src/screens',
       rootPathPrefix: '@screens/',
     },

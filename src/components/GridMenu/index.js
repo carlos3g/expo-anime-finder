@@ -1,8 +1,6 @@
-import React, { useEffect } from 'react';
-
+import { useEffect } from 'react';
 import { Animated } from 'react-native';
-
-import { Container, ActiveIcon, InactiveIcon } from './styles';
+import { ActiveIcon, Container, InactiveIcon } from './styles';
 
 function GridMenu({ focus, onPress }) {
   const fadeAnim = new Animated.Value(1);
